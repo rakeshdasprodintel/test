@@ -2,19 +2,11 @@
 
 class add{
     function add($params = 0){
-        $params = str_replace('\\','0',$params);
         $params = explode(',',$params);
         $sum = 0;
-        $negative = array();
         for($i = 0;$i < count($params);$i++){
-            if($params[$i] < 0){
-                $negative[] = $params[$i];
-            }else{
+            if($params[$i] <= 1000){
                 $sum += $params[$i];
-            }
-            
-            if(count($negative)){
-                $sum = "Error: Negative numbers	(".implode(',',$negative).")not allowed.";
             }
         }
         return $sum;

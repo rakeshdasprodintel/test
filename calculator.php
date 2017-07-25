@@ -5,11 +5,16 @@ class add{
         $params = str_replace('\\','0',$params);
         $params = explode(',',$params);
         $sum = 0;
+        $negative = array();
         for($i = 0;$i < count($params);$i++){
             if($params[$i] < 0){
-                die('Error: Negative numbers not allowed.');
+                $negative[] = $params[$i];
             }else{
                 $sum += $params[$i];
+            }
+            
+            if(count($negative)){
+                $sum = "Error: Negative numbers	(".implode(',',$negative).")not allowed.";
             }
         }
         return $sum;

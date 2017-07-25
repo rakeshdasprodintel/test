@@ -3,10 +3,14 @@
 class add{
     function add($params = 0){
         $params = str_replace('\\','0',$params);
-        $params = explode(';',$params);
+        $params = explode(',',$params);
         $sum = 0;
         for($i = 0;$i < count($params);$i++){
-            $sum += $params[$i];
+            if($params[$i] < 0){
+                die('Error: Negative numbers not allowed.');
+            }else{
+                $sum += $params[$i];
+            }
         }
         return $sum;
     }

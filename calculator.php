@@ -1,6 +1,6 @@
 <?php
 
-class add{
+class calculate{
     function add($params = 0){
         $params = explode(',',$params);
         $sum = 0;
@@ -12,8 +12,17 @@ class add{
         return $sum;
     }
     
+    function multiply($params){
+        $params = explode(',',$params);
+        $param1 = isset($params[0]) ? $params[0] : 0;
+        $param2 = isset($params[1]) ? $params[1] : 0;
+        return $param1*$param2;
+    }
+    
+    
+    
 }   
     $arg = isset($argv[2]) ? $argv[2] : 0;
-    $obj = new add($arg);
-    echo $obj->add($arg);
+    $obj = new calculate($arg);
+    echo $obj->multiply($arg);
 ?>

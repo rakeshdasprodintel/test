@@ -2,6 +2,7 @@
 
 class add{
     function add($params = 0){
+        $params = str_replace('\n',',',$params);
         $params = explode(',',$params);
         $sum = 0;
         for($i = 0;$i < count($params);$i++){

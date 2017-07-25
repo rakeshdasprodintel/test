@@ -1,7 +1,7 @@
 <?php
 
-class sum{
-    function sum($params = 0){
+class add{
+    function add($params = 0){
         $params = explode(',',$params);
         $sum = 0;
         for($i = 0;$i < count($params);$i++){
@@ -12,6 +12,6 @@ class sum{
     
 }   
     $arg = isset($argv[2]) ? $argv[2] : 0;
-    $obj = new sum($arg);
-    echo $obj->sum($arg);
+    $obj = new add($arg);
+    echo $obj->add($arg);
 ?>
